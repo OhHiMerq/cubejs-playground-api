@@ -1,0 +1,37 @@
+cubes:
+  - name: orders
+    sql_table: public.orders
+    data_source: default
+
+    pre_aggregations:
+      # Pre-aggregation definitions go here
+      # Learn more here: https://cube.dev/docs/caching/pre-aggregations/getting-started
+
+    joins: []
+
+    measures:
+      - name: count
+        type: count
+
+      - name: number
+        sql: number
+        type: sum
+
+    dimensions:
+      - name: id
+        sql: id
+        type: number
+        primary_key: true
+
+      - name: status
+        sql: status
+        type: string
+
+      - name: created_at
+        sql: created_at
+        type: time
+
+      - name: completed_at
+        sql: completed_at
+        type: time
+
