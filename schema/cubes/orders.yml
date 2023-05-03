@@ -12,6 +12,7 @@ cubes:
     measures:
       - name: count
         type: count
+        drillMembers: [id, status, created_at, completed_at]
 
       - name: number
         sql: number
@@ -34,4 +35,3 @@ cubes:
       - name: completed_at
         sql: completed_at
         type: time
-
